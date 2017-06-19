@@ -1,0 +1,233 @@
+/**
+ * Demo Styles
+ */
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    padding-bottom: 140px;
+}
+
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+}
+
+.stickyfooter {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footertekst {
+    margin-top: 10px;
+}
+
+.footeropsomming  {
+    list-style-type: none;
+}
+
+.navar-brand-logo   {
+    width: 60px;
+    height: auto;
+    padding-top:5px;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 70px;
+    height: 70px;
+    padding-top: 0;
+}
+
+.maakuwkeuze  {
+    width: 250px;
+}
+
+.btn-primary  {
+    background-color: #01699c !important;
+    border: 0px;
+}
+
+.btn-primary:hover  {
+    background-color: #1086c1 !important;
+    border: 0px;
+}
+
+
+body #load-line1 {
+    stroke: #fdc445;
+}
+body #load-line2 {
+    stroke: #2196f3;
+}
+body #load-line3 {
+    stroke: #e91e63;
+}
+body #load-line4 {
+    stroke: #9c27b0;
+}
+body .circle-wrapper {
+    display: block;
+    text-align: center;
+    margin: auto auto;
+    height: 100%;
+    /* style="stroke-dashoffset: 192.6168975830078px; stroke-dasharray: 192.6168975830078px;"*/
+    /*&#load-line1 {
+      stroke-dashoffset : 192px;
+      stroke-dasharray : 192px;
+      stroke: #0dbf2d;
+      stroke-width: 5px;
+      animation: load 5s ease-in-out forwards
+    }*/
+}
+body .circle-wrapper .svg:nth-of-type(1) {
+    color: #000;
+}
+body .circle-wrapper .svg:nth-of-type(2) {
+    color: #2196f3;
+}
+body .circle-wrapper .svg:nth-of-type(3) {
+    color: #e91e63;
+}
+body .circle-wrapper .svg:nth-of-type(4) {
+    color: #9c27b0;
+}
+body .circle-wrapper .svg {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
+    position: relative;
+}
+
+body .circle-wrapper .svg:after {
+    content: attr(data-lang);
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px #fff;
+}
+body .circle-wrapper .svg:before {
+    content: "" attr(data-value) "%";
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: #000;
+    text-shadow: 1px 1px 1px #eee;
+}
+body .circle-wrapper svg path {
+    fill: none;
+}
+body .circle-wrapper svg .load-circle {
+    stroke-width: 5px;
+    stroke-linecap: round;
+    -webkit-transition: stroke-dashoffset 3s ease-in-out;
+    transition: stroke-dashoffset 3s ease-in-out;
+    position: relative;
+}
+body .circle-wrapper .load-bg {
+    stroke: #ddd;
+    stroke-width: 5px;
+}
+@-webkit-keyframes load {
+    to {
+        stroke-dashoffset: 48;
+    }
+}
+@keyframes load {
+    to {
+        stroke-dashoffset: 48;
+    }
+}
+
+
+.social {
+    color: #999;
+    letter-spacing: 1px;
+}
+.social i {
+    background: #eee;
+    color: #777;
+    padding: 5px;
+    border-radius: 50%;
+}
+.social i:hover {
+    color: #111;
+}
+.social .follow {
+    -webkit-animation: light 0.8s ease-in-out infinite forwards;
+    animation: light 0.8s ease-in-out infinite forwards;
+}
+
+@-webkit-keyframes light {
+    to {
+        color: #111;
+    }
+}
+
+@keyframes light {
+    to {
+        color: #111;
+    }
+}
+
+
+.uitloggenknop {
+    border-style: none !important;
+    margin-left: 10px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    color: #848484 !important;
+    background: none !important;
+}
+
+.uitloggenknoplink  {
+    color: #848484 !important;
+    text-decoration:none;
+}
+
+.uitloggenknoplink:hover  {
+    color: #848484 !important;
+    text-decoration:none;
+}
+
+.btn-ruimte{
+    margin-left: 5px;
+}
+
