@@ -23,9 +23,11 @@ router.get('/', function (req, res, next) {
     else
     {
         var saldo = address[0].qty;
-        var percentageschuld = parseInt((saldo/100000000000000) *100);
+        var percentageschuld = parseInt((saldo/200000000000000) *100);
+        var percentageschuldgeheel = parseInt((saldo/1000000000000000) *100);
+        var saldosocialcoin = parseInt(((saldo) /saldo + 100) *100);
         console.log(address);
-        res.render('home', {asset: address[0].name, quantity: address[0].qty, percentage: percentageschuld, editorBody: editorBody});
+        res.render('home', {asset: address[0].name, quantity: address[0].qty, percentage: percentageschuld, percentagegeheel: percentageschuldgeheel, socialcoin: saldosocialcoin});
     }
 })
 });
