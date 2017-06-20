@@ -1,6 +1,7 @@
 extends ../../node_modules/pug-bootstrap/_bootstrap.pug
 
 block body
+
     #wrap
         nav.navbar.navbar-default
             .container-fluid
@@ -13,10 +14,37 @@ block body
                         span.icon-bar
                     a.navbar-brand(href='/')
                         img.navar-brand-logo(alt='Brand', src='http://maba-online.nl/socialcoin/logosocialcoin.png')
+                    a.navbar-brand(href='/')
+                        img.navbar-ica-logo(alt='Brand', src='http://maba-online.nl/socialcoin/logo_ica_small.svg')
                 // Collect the nav links, forms, and other content for toggling
                 #bs-example-navbar-collapse-1.collapse.navbar-collapse
-                    ul.nav.navbar-nav
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            if gebruiker != null
+                                form(method='post', action='/')
+                                    button.uitloggenknop(type='submit')
+                                        a.uitloggenknoplink Uitloggen
+                            else
+                                a(type='button', data-toggle='modal', data-target='#inloggen') Inloggen
 
+    #inloggen.modal.fade(role='dialog')
+        .modal-dialog
+            // Modal content
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal') ×
+                    h4.modal-title Inloggen
+                .modal-body
+                    form(method='POST' action='/beheer')
+                        div.form-group
+                            label(for='address') Gebruikersnaam
+                            input#address.form-control(type='text', name='gebruikersnaam')
+                        div.form-group
+                            label(for='address') Wachtwoord
+                            input#address.form-control(type='text', name='wachtwoord')
+                        div.modal-footer
+                            button.btn.btn-primary(type='button', data-dismiss='modal') Annuleren
+                            button.btn.btn-primary(type='submit') Inloggen
 
                 // /.navbar-collapse
             // /.container-fluid
