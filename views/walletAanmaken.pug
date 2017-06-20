@@ -4,7 +4,12 @@ include includes/header.pug
     .page-header
       h1
         | SocialCoin | Home
-      .col-md-6
-        verbatim !{qrcode}
+        .pull-right
+          button.btn.btn-default(onclick='goBack()') Terug
+    .col-md-6
+      verbatim !{qrcode}
+    .col-md-6
+      p Nieuw adres: #{address}
+      p Met de volgende permissions: #{permission}
 
 include includes/footer.pug
