@@ -9,6 +9,8 @@ var fs = require('fs');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var beheer = require('./routes/beheer');
+var home = require('./routes/home');
 
 var app = express();
 
@@ -26,6 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/beheer', beheer);
+app.use('/home', home);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

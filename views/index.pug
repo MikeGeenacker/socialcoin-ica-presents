@@ -3,6 +3,10 @@ include includes/header.pug
     // Main jumbotron for a primary marketing message or call to action
     .page-header
       h1
-        | SocialCoin | Home
+        | #{gebruiker}
+        | #{inlogstatus}
+        |
+        .pull-right
+          button.btn.btn-default(onclick='goBack()') Terug
 
 include includes/footer.pug

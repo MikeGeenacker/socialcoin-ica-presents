@@ -7,7 +7,15 @@ router.get('/', function(req, res, next) {
         var LocalStorage = require('node-localstorage').LocalStorage;
         localStorage = new LocalStorage('./scratch');
     }
-  res.render('index', { title: 'SocialCoin' });
+    var gebruiker = localStorage.getItem('gebruikersnaam');
+
+    if(gebruiker !== null) {
+        res.render('beheer', { title: 'SocialCoin', gebruiker: gebruiker});
+    }
+    else    {
+        res.redirect('/');
+    }
+
 });
 
 router.post('/', function(req, res, next) {
@@ -15,11 +23,17 @@ router.post('/', function(req, res, next) {
         var LocalStorage = require('node-localstorage').LocalStorage;
         localStorage = new LocalStorage('./scratch');
     }
-    localStorage.removeItem('gebruikersnaam');
-
+    localStorage.setItem('gebruikersnaam', req.body.gebruikersnaam);
     var gebruiker = localStorage.getItem('gebruikersnaam');
     console.log(gebruiker);
-    res.render('index', { title: 'SocialCoin', gebruiker: gebruiker});
+
+    if(gebruiker === 'groep9') {
+        res.render('beheer', { title: 'SocialCoin', gebruiker: gebruiker});
+    }
+    else    {
+        res.redirect('/');
+    }
+
 });
 
 module.exports = router;
