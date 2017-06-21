@@ -8,10 +8,7 @@ const multichain = require("multichain-node")({
 });
 
 router.get('/', function (req, res, next) {
-    if (typeof localStorage === "undefined" || localStorage === null) {
-        var LocalStorage = require('node-localstorage').LocalStorage;
-        localStorage = new LocalStorage('./scratch');
-    }
+
     var account = req.query.account;
     localStorage.setItem('account', account);
 
