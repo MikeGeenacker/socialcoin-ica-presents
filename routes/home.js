@@ -27,7 +27,6 @@ router.get('/', function (req, res, next) {
         var percentageschuldgeheel = parseInt((saldo/1000000000000000) *100);
         var saldosocialcoin = parseInt(((saldo) /saldo + 100) *100);
         var resterendeschuld = 50000 - saldo;
-        console.log(address);
         res.render('home', {asset: address[0].name, quantity: address[0].qty, percentage: percentageschuld, percentagegeheel: percentageschuldgeheel, socialcoin: saldosocialcoin, resterend: resterendeschuld});
     }
 })
