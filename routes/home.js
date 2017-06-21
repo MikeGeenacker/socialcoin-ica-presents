@@ -10,12 +10,12 @@ const multichain = require("multichain-node")({
 router.get('/', function (req, res, next) {
 
     var account = req.query.account;
-    localStorage.setItem('account', account);
 
     multichain.getAddressBalances({address: account, minconf: 0}, (err, address) => {
         if (err || address.length <= 0 || typeof address == 'undefined')
     {
-        res.render('home', {err: 'Wallet bevat geen saldo of wallet bestaat niet.', error: err.message, saldo: 0});
+        var resterendeschuld = 50000 - saldo;
+        res.render('home', {err: 'Wallet bevat geen saldo of wallet bestaat niet.',percentage: 0, quantity: 0, resterend: 50000, account: account});
     }
     else
     {
@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
         var percentageschuldgeheel = parseInt((saldo/1000000000000000) *100);
         var saldosocialcoin = parseInt(((saldo) /saldo + 100) *100);
         var resterendeschuld = 50000 - saldo;
-        res.render('home', {asset: address[0].name, quantity: address[0].qty, percentage: percentageschuld, percentagegeheel: percentageschuldgeheel, socialcoin: saldosocialcoin, resterend: resterendeschuld});
+        res.render('home', {asset: address[0].name, quantity: address[0].qty, percentage: percentageschuld, percentagegeheel: percentageschuldgeheel, socialcoin: saldosocialcoin, resterend: resterendeschuld, account: account});
     }
 })
 });

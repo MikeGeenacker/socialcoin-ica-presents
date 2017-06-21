@@ -38,7 +38,7 @@ eurecaServer.attach(server);
 
 eurecaServer.exports.sendCoins = function(address, quantity) {
     // TODO, de daadwerkelijke call maken, return info kan niet geloof ik vanwege callbacks maar gewone functies kunnen. En versturen vereist toch geen reactie
-    multichain.sendAssetFrom({from: '1BGsLpR4B8AjJV9ox1kpinLThaNoZwAtdC83mf', to:'1T4ip6sfhjHcBDRcWKEcoCqZZWKUpcZTM4KPH4', asset: 'SocialCoin', qty:  quantity},(err)=>{
+    multichain.sendAssetFrom({from: '1BGsLpR4B8AjJV9ox1kpinLThaNoZwAtdC83mf', to: address, asset: 'SocialCoin', qty:  quantity},(err)=>{
       if(err) console.log(err);
     });
     console.log("verzoek tot coins verzenden binne gekregen van client");
