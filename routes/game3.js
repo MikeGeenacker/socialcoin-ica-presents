@@ -6,7 +6,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('game');
+    res.render('game3');
 });
 
 module.exports = router;

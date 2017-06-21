@@ -11,7 +11,9 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const beheer = require('./routes/beheer');
 const home = require('./routes/home');
-const game = require('./routes/game');
+const game1 = require('./routes/game1');
+const game2 = require('./routes/game2');
+const game3 = require('./routes/game3');
 const globalHome = require('./routes/globalHome');
 const walletAanmaken = require('./routes/walletAanmaken');
 
@@ -33,7 +35,9 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/beheer', beheer);
 app.use('/home', home);
-app.use('/game', game);
+app.use('/game1', game1);
+app.use('/game2', game2);
+app.use('/game3', game3);
 app.use('/walletAanmaken', walletAanmaken);
 app.use('/globalHome', globalHome);
 
