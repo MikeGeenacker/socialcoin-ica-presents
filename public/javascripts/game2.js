@@ -26,10 +26,10 @@ function preload() {
     //game.load.image('onkruid', 'images/onkruid.png');
     //game.load.image('aarde', 'aarde.png');
     game.load.image('coin', 'images/coin.png');
-	game.load.image('braam', 'images/bosje.png');
+	game.load.image('braam', 'images/Bramen.png');
     game.load.image('door-right', 'images/door-right.png');
     game.load.image('door-left', 'images/door-left.png');
-	game.load.image('background', 'images/bg.png');
+	game.load.image('background', 'images/Struik.png');
 
 
     //game.add.image('coin', 64, 64);
