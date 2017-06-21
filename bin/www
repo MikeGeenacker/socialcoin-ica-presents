@@ -3,10 +3,18 @@
 /**
  * Module dependencies.
  */
-
 var app = require('../app');
-var debug = require('debug')('socialcoin-ica-presents:server');
+var debug = require('debug')('ica-presents-game:server');
 var http = require('http');
+var Eureca = require('eureca.io');
+const multichain = require("multichain-node")({
+    port: 7348,
+    host: '136.144.155.184',
+    user: "multichainrpc",
+    pass: "uPc6civWyGanmrmAgn3Tn9pPgYR3noMQt9nPMun9GeD"
+});
+
+var eurecaServer = new Eureca.Server();
 
 /**
  * Get port from environment and store in Express.
@@ -24,6 +32,19 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+
+eurecaServer.attach(server);
+
+
+eurecaServer.exports.sendCoins = function(address, quantity) {
+    // TODO, de daadwerkelijke call maken, return info kan niet geloof ik vanwege callbacks maar gewone functies kunnen. En versturen vereist toch geen reactie
+    multichain.sendAssetFrom({from: '1BGsLpR4B8AjJV9ox1kpinLThaNoZwAtdC83mf', to:'1T4ip6sfhjHcBDRcWKEcoCqZZWKUpcZTM4KPH4', asset: 'SocialCoin', qty:  quantity},(err)=>{
+      if(err) console.log(err);
+    });
+    console.log("verzoek tot coins verzenden binne gekregen van client");
+    return "coins sent";
+    //multichain.sendasset ofzo
+}
 
 server.listen(port);
 server.on('error', onError);
