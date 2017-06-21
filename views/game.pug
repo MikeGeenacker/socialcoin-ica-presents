@@ -1,5 +1,9 @@
 extends layout
 block content
+  if(!{spelGedaan})
     #area
     script(src='/eureca.js')
     script(src='javascripts/game1.js')
+  if({spelGedaan})
+    p U heeft deze taak al voltooid,
+    p nadat een taak voltooid is mag deze niet nog een keer gedaan worden.
