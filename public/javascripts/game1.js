@@ -4,7 +4,7 @@ let game = new Phaser.Game(720, 1280, Phaser.AUTO, 'area', {
     create: create,
     update: update
 });
-let client = new Eureca.Client({ uri: 'http://localhost:3000/game' });
+let client = new Eureca.Client({ uri: 'http://136.144.155.184/game1' });
 let rpc;
 
 client.ready(function(remote) {
