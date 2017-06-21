@@ -1,27 +1,29 @@
-include includes/header.pug
+include includes/header2.pug
     .container.theme-showcase(role='main')
         // Main jumbotron for a primary marketing message or call to action
         .page-header
             h1
-                | Home
-                .pull-right
-                    button.btn.btn-default(onclick='goBack()') Terug
-        .col-md-6
+                | SocialCoin
+        .col-md-4
             .circle-wrapper
-                .svg.svg1.col-md-6.col-sm-6(data-value='' + parseInt(percentage) + '', data-lang='Zelf afgelost')
-                    svg(width='250px', height='250px', viewbox='0 0 80 80')
-                        path.load-bg.cir1(d='M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z')
-                        path#load-line1.load-circle(style='stroke-dashoffset: 192.6168975830078px; stroke-dasharray: 192.6168975830078px;', d='M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z')
-            .circle-wrapper
-                .svg.svg1.col-md-6.col-sm-6(data-value='' + parseInt(percentagegeheel) + '', data-lang='Totaal afgelost')
+                .svg.svg1.col-md-10.col-sm-10(data-value='' + parseInt(percentage) + '', data-lang='Afgelost')
                     svg(width='250px', height='250px', viewbox='0 0 80 80')
                         path.load-bg.cir1(d='M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z')
                         path#load-line1.load-circle(style='stroke-dashoffset: 192.6168975830078px; stroke-dasharray: 192.6168975830078px;', d='M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z')
         .col-md-8
-            .progress
-                .progress-bar(role='progressbar', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100', style='width:100%' )
-                    | Totale schuld €2 miljard
-            .progress
-                .progress-bar(role='progressbar', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100', style='width:100%' )
-                    | Totale schuld €2 miljard
+            ul.list-group
+                li.list-group-item
+                    Strong Totale studieschuld:
+                    |  € 50000,-
+                li.list-group-item
+                    Strong Resterende studieschuld:
+                    |  € #{resterend},-
+                li.list-group-item
+                    Strong SocialCoins verdiend:
+                    |  SC #{quantity}
+
+            ul.list-group
+                li.list-group-item
+                    Strong In de toekomst:
+                    |  1 SC = €1,-
 include includes/footer.pug

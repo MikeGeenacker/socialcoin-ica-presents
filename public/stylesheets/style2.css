@@ -259,3 +259,20 @@ body .circle-wrapper .load-bg {
 	transform-origin: 100% 100%;
     float: left;
 }
+
+.informatieschuld   {
+    text-align: center;
+}
+
+.schuldbalk {
+    height: 40px;
+    margin-bottom: 0px !important;
+}
+
+.container.theme-showcase    {
+    padding-bottom:50px;
+}
+
+.menuweg    {
+    display: none;
+}
