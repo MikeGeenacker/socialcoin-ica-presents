@@ -1,19 +1,20 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var qr = require('qr-image');
-var fs = require('fs');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const qr = require('qr-image');
+const fs = require('fs');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var beheer = require('./routes/beheer');
-var home = require('./routes/home');
-let walletAanmaken = require('./routes/walletAanmaken');
+const index = require('./routes/index');
+const users = require('./routes/users');
+const beheer = require('./routes/beheer');
+const home = require('./routes/home');
+const game = require('./routes/game');
+const walletAanmaken = require('./routes/walletAanmaken');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,11 +32,12 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/beheer', beheer);
 app.use('/home', home);
+app.use('/game', game);
 app.use('/walletAanmaken', walletAanmaken);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
