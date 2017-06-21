@@ -134,9 +134,10 @@ function update() {
     }
     if (gameEnded) {
 		text.alpha = 1;
-        if (coins < 10000)
-            coins+=100;
-        text.setText(coins);
+		if (coins < 10000) {
+			coins+=100;
+			text.setText(coins);
+		}
 		if(coins == 10000) {
 		payUser();
 		}
