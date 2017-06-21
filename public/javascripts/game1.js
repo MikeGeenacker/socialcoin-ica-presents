@@ -147,7 +147,7 @@ function update() {
 function payUser() {
 		if(!payed) {
         rpc.sendCoins(localStorage.getItem('wallet'), 10000); //adres zou hier ingevuld moeten worden mbv localstorage
-        window.location.replace('136.144.155.184/home?account=' + localStorage.getItem('wallet'));
+        window.location.replace('/home?account=' + localStorage.getItem('wallet'));
 				payed = true;
     }
 }
